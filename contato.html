@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato conosco.">
+    <title>Contato | Encanador Profissional</title>
+    <link rel="stylesheet" href="./Estilo/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="menu">
+            <button class="hamburguer" aria-label="Abrir Menu">
+                ☰
+            </button>
+            <div class="menus">
+                <div class="menuEsquerda">
+                    <a href="index.html" >Início</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="servicos.html">Serviços</a>
+                </div>
+                <div class="menuDireita">
+                    <a href="dicas.html">Dicas</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contato.html" class="ativo">Contato</a>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Logo">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="contato">
+            <h1>Fale Conosco</h1>
+            <form id="contato-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="assunto">Assunto:</label>
+                <select id="assunto" name="assunto" required>
+                    <option value="">Selecione o assunto</option>
+                    <option value="orçamento">Solicitar Orçamento</option>
+                    <option value="suporte">Suporte Técnico</option>
+                    <option value="outros">Outros</option>
+                </select>
+                
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                
+                <!-- Checkbox de Termos de Uso -->
+                <div>
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos">Aceito os termos de uso</label>
+                </div>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section class="calculo-visita">
+            <h2>Calcular Custo da Visita Técnica</h2>
+            <form id="calculo-form">
+                <label for="distancia">Informe a distância (em KM):</label>
+                <input type="number" id="distancia" name="distancia" min="1" required>
+                
+                <button type="button" id="calcular-btn">Calcular</button>
+            </form>
+            <div id="resultado-custo">
+                <!-- Resultado será exibido aqui -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Encanador Profissional | Todos os direitos reservados</p>
+        <a href="https://www.lojassos.com.br/">Site Referencia</a>
+    </footer>
+    <div id="whatsapp-icon">
+        <a href="https://wa.me/5541984821206" target="_blank">
+          <img src="./assets/icone-whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+    <script src="./Javascript/script.js"></script>
+</body>
+</html>

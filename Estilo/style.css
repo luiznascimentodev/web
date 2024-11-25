@@ -1,0 +1,1228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    
+    color: #ff0000
+}
+
+/* Efeito hover para todos os links */
+a:hover {
+    color: #4CAF50; /* Cor verde quando o link for hover */
+    text-decoration: underline; /* Adiciona sublinhado quando passar o mouse */
+    transition: color 0.3s, text-decoration 0.3s; /* Suaviza a transição do efeito */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+.menus {
+    display: flex;
+    gap: 20px;
+}
+
+.hamburguer {
+    display: none; /* Escondido por padrão */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.menuEsquerda, .menuDireita {
+    display: flex;
+    gap: 20px;
+
+}
+
+.menuEsquerda a, .menuDireita a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    padding: 10px 30px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menuEsquerda a:hover, .menuDireita a:hover {
+    background-color: #f0f0f0;
+}
+
+.menuEsquerda .ativo, .menuDireita .ativo {
+    background-color: #001f3f;
+    color: #fff;
+    border-color: #001f3f;
+}
+
+.logo img {
+    max-height: 80px;
+    padding: 0 12px;
+    display: block;
+}
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
+    .menuEsquerda a, .menuDireita a {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    .logo img {
+        max-height: 60px;
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .menus {
+        display: none; /* Esconde os menus por padrão */
+        flex-direction: column; /* Exibe os itens de forma vertical */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-top: 2px solid #eee;
+        padding: 10px 0;
+        z-index: 10;
+    }
+
+    .menus.active {
+        display: flex; /* Exibe os menus quando ativados */
+    }
+
+    /* Links ocupando toda a largura */
+    .menuEsquerda a, .menuDireita a {
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menuEsquerda a:last-child, .menuDireita a:last-child {
+        border-bottom: none; /* Remove a borda do último item */
+    }
+
+    .logo img {
+        max-height: 50px;
+    }
+
+    .hamburguer {
+        display: block; /* Exibe o botão hamburguer em telas menores */
+    }
+}
+
+/* Estilo do banner */
+.banner img {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 500px;
+}
+
+/* Estilo da introdução */
+.intro {
+    background-color: #001f3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 1920px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.intro p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.intro button {
+    background-color: #0074D9;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.intro button:hover {
+    background-color: #0057A8;
+}
+
+.intro button a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+/* Estilo das seções de cards */
+.cards {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cards h2 {
+    font-size: 36px;
+    color: #001f3f;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    width: 100%;
+    height: 450px; /* Ajuste a altura do cartão conforme necessário */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o limite do card */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #001f3f;
+    margin-bottom: 10px;
+    font-weight: 600;
+    margin-top: 10px; /* Ajuste o espaçamento se necessário */
+}
+
+.card p {
+    font-size: 16px;                /* Define o tamanho da fonte */
+    color: #666;                    /* Define a cor do texto */
+    line-height: 1.6;               /* Espaçamento entre linhas */
+    margin: 10px 0;                 /* Margem acima e abaixo */
+    flex-grow: 1;                   /* Permite que o texto ocupe o espaço disponível */
+    overflow: hidden;               /* Garante que o conteúdo que ultrapassar o limite do card seja ocultado */
+    text-overflow: ellipsis;        /* Adiciona "..." caso o texto seja muito longo */
+    display: flex;                 /* Faz o parágrafo se comportar como um bloco normal */
+    max-height: 200px;              /* Limita a altura do parágrafo */
+    height: 200px;                  /* Define uma altura fixa para o texto */
+    overflow-y: auto;               /* Garante que o texto que ultrapassar a altura seja rolável */
+}
+
+.card img {
+    width: 100%;          /* Faz com que as imagens ocupem toda a largura da carta */
+    height: 200px;        /* Define uma altura fixa para as imagens */
+    object-fit: cover;    /* Faz com que as imagens se ajustem ao tamanho sem distorcer, cortando se necessário */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    max-height: 200px;    /* Garante que a altura máxima da imagem seja fixada */
+}
+
+/* Responsividade para Tablets */
+@media (max-width: 1024px) {
+    .intro h1 {
+        font-size: 36px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .cards {
+        padding: 30px 10px;
+    }
+
+    .card {
+        max-width: 250px;
+        height: 400px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 28px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+
+    .cards {
+        padding: 20px 5px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        max-width: 100%;
+        height: 350px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 12px;
+        max-height: 150px;
+        height: 150px;
+    }
+
+    .banner img {
+        max-height: 300px;
+    }
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #001f3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    border-top: 2px solid #eee;
+}
+
+footer p {
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Seções gerais de Dicas, Blog e Contato */
+.dicas, .blog, .contato {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.dicas h1, .blog h1, .contato h1 {
+    font-size: 36px;
+    color: #001f3f;
+    margin-bottom: 30px;
+}
+
+/* Estilo de artigos na página de Contato */
+article {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+    font-size: 24px;
+    color: #001f3f;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilo do formulário na seção Contato */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #001f3f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #001f3f;
+    opacity: 0.9;
+}
+
+/* Estilo da seção de Dicas */
+.dicas {
+    background-color: #f9f9f9;
+}
+
+.dica-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.dica {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+}
+
+.dica h3 {
+    font-size: 20px;
+    color: #001f3f;
+    margin-bottom: 10px;
+}
+
+.dica p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsividade para Tablets */
+@media (max-width: 1024px) {
+    /* Seções gerais de Dicas, Blog e Contato */
+    .dicas, .blog, .contato {
+        padding: 40px 15px;
+    }
+
+    .dicas h1, .blog h1, .contato h1 {
+        font-size: 30px;
+    }
+
+    /* Estilo de artigos na página de Contato */
+    article h2 {
+        font-size: 20px;
+    }
+
+    article p {
+        font-size: 14px;
+    }
+
+    /* Estilo do formulário na seção Contato */
+    form input, form textarea, form button {
+        font-size: 14px;
+    }
+
+    /* Estilo da seção de Dicas */
+    .dica-container {
+        grid-template-columns: repeat(2, 1fr);  /* 2 colunas para telas médias */
+    }
+
+    .dica h3 {
+        font-size: 18px;
+    }
+
+    .dica p {
+        font-size: 14px;
+    }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    /* Seções gerais de Dicas, Blog e Contato */
+    .dicas, .blog, .contato {
+        padding: 30px 10px;
+    }
+
+    .dicas h1, .blog h1, .contato h1 {
+        font-size: 24px;
+    }
+
+    /* Estilo de artigos na página de Contato */
+    article {
+        padding: 15px;
+    }
+
+    article h2 {
+        font-size: 18px;
+    }
+
+    article p {
+        font-size: 14px;
+    }
+
+    /* Estilo do formulário na seção Contato */
+    form input, form textarea, form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Estilo da seção de Dicas */
+    .dica-container {
+        grid-template-columns: 1fr;  /* 1 coluna para celulares */
+    }
+
+    .dica h3 {
+        font-size: 16px;
+    }
+
+    .dica p {
+        font-size: 12px;
+    }
+}
+
+/* Seção de Blog */
+.blog {
+    background-color: #f9f9f9;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.blog-post {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.blog-post img {
+    max-width: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.blog-post h3 {
+    font-size: 20px;
+    color: #001f3f;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-post button {
+    background-color: #001f3f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post button a {
+    text-decoration: none;
+    color: white;
+}
+
+.blog-post button:hover {
+    background-color: #001f3f;
+    opacity: 0.8;
+}
+
+/* Conteúdo adicional com transição */
+.more-content {
+    display: block; /* Para garantir que o conteúdo ainda exista no layout */
+    max-height: 0; /* Inicialmente oculto */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o max-height */
+    opacity: 0; /* Torna o conteúdo invisível */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Suaviza a transição */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estado ativo (aberto) do post */
+.blog-post.active .more-content {
+    max-height: 500px; /* Define o limite de altura para a transição */
+    opacity: 1; /* Torna o conteúdo visível */
+}
+
+/* Estilo do botão */
+.blog-post.active .expand-btn {
+    background-color: #001f3f;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Responsividade para Tablets */
+@media (max-width: 1024px) {
+    .blog-container {
+        padding: 20px;
+    }
+
+    .blog-post {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .blog-post img {
+        max-width: 120px;  /* Ajuste da imagem para telas médias */
+        margin-bottom: 15px;
+    }
+
+    .blog-post h3 {
+        font-size: 18px;  /* Ajuste do título */
+    }
+
+    .blog-post p {
+        font-size: 14px;  /* Ajuste do texto */
+    }
+
+    .blog-post button {
+        padding: 8px 16px;  /* Ajuste do botão */
+        font-size: 12px;
+    }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .blog-container {
+        padding: 15px;
+    }
+
+    .blog-post {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .blog-post img {
+        max-width: 100px;  /* Ajuste da imagem para celulares */
+        margin-bottom: 10px;
+    }
+
+    .blog-post h3 {
+        font-size: 16px;  /* Ajuste do título */
+    }
+
+    .blog-post p {
+        font-size: 14px;  /* Ajuste do texto */
+    }
+
+    .blog-post button {
+        padding: 8px 14px;  /* Ajuste do botão */
+        font-size: 12px;
+    }
+}
+
+
+/* Estilização da página sobre */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    color: #004aad;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.container-content div {
+    flex: 1;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+}
+
+.container-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade para Tablets (máximo de 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .container-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .container-content div {
+        font-size: 0.95rem; /* Ajuste no tamanho da fonte */
+    }
+
+    .container-content img {
+        max-width: 100%;
+    }
+}
+
+/* Responsividade para Celulares (máximo de 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .container h1 {
+        font-size: 2rem; /* Redução do tamanho do título */
+    }
+
+    .container h2 {
+        font-size: 1.25rem; /* Redução do subtítulo */
+    }
+
+    .container-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container-content div {
+        font-size: 0.9rem; /* Ajuste no tamanho da fonte */
+    }
+
+    .container-content img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Contêiner principal de serviços */
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.servicos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo do título */
+.servicos h1 {
+    font-size: 36px;
+    color: #001f3f;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Contêiner dos cartões */
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Estilo dos cartões de serviço */
+.servico-card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo da imagem nos cartões */
+.servico-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Título do serviço */
+.servico-card h3 {
+    font-size: 20px;
+    color: #001f3f;
+    margin-bottom: 10px;
+}
+
+/* Texto descritivo do serviço */
+.servico-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Botão nos cartões */
+.servico-card button {
+    background-color: #001f3f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo do link no botão */
+.servico-card button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Efeito de hover no botão */
+.servico-card button:hover {
+    background-color: #001f3f;
+    opacity: 0.9;
+}
+
+.video{
+    margin: 0 auto;
+    padding: 50px;
+}
+
+
+/* Responsividade para Tablets (máximo de 1024px) */
+@media (max-width: 1024px) {
+    .servicos-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .servico-card {
+        max-width: 100%;
+    }
+
+    .servico-card img {
+        max-width: 120px; /* Ajuste no tamanho da imagem */
+    }
+
+    .servico-card h3 {
+        font-size: 18px; /* Ajuste no tamanho do título */
+    }
+
+    .servico-card p {
+        font-size: 14px; /* Ajuste no tamanho do texto */
+    }
+
+    .servico-card button {
+        font-size: 12px; /* Ajuste no tamanho da fonte do botão */
+        padding: 8px 16px;
+    }
+    .video iframe {
+        width: 80%; /* Reduz a largura para deixar mais retangular */
+        height: 400px; /* Mantém a altura mais alta para o formato retangular */
+    }
+}
+
+/* Responsividade para Celulares (máximo de 768px) */
+@media (max-width: 768px) {
+    .servicos-container {
+        grid-template-columns: 1fr; /* Um único cartão por linha */
+        gap: 10px;
+    }
+
+    .servico-card {
+        max-width: 100%;
+    }
+
+    .servico-card img {
+        max-width: 100px; /* Ajuste no tamanho da imagem */
+    }
+
+    .servico-card h3 {
+        font-size: 16px; /* Ajuste no tamanho do título */
+    }
+
+    .servico-card p {
+        font-size: 14px; /* Ajuste no tamanho do texto */
+    }
+
+    .servico-card button {
+        font-size: 12px; /* Ajuste no tamanho da fonte do botão */
+        padding: 8px 16px;
+    }
+
+    .video iframe {
+        width: 90%; /* Ajusta para 90% da largura da tela */
+        height: 250px; /* Altura mais baixa para telas pequenas */
+    }
+    
+}
+
+#whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Altere "right" para "left" */
+    z-index: 1000;
+    animation: bounce 2s infinite; /* Adiciona a animação */
+  }
+  
+  #whatsapp-icon img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  #changeBG {
+    
+    right: 20px; /* Distância do botão para a direita */
+    padding: 8px 15px; /* Tamanho do botão */
+    background-color: #00b8b8; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem bordas */
+    border-radius: 15px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão para indicar clicável */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animação de transição */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+#changeBG:hover {
+    background-color: #009b9b; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.1); /* Aumenta levemente o botão ao passar o mouse */
+}
+
+#changeBG:focus {
+    outline: none; /* Remove o contorno ao focar */
+}
+
+/* Texto destacado */
+mark {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+mark.hover-highlight {
+    transition: background-color 0.3s;
+}
+
+mark.hover-highlight:hover {
+    background-color: #d4edda;
+}
+
+/* Listas */
+ol {
+    margin: 20px 0;
+    padding-left: 40px;
+    list-style: decimal;
+}
+
+ul {
+    margin: 20px 0;
+    padding-left: 40px;
+    list-style: disc;
+}
+
+li {
+    margin: 5px 0;
+}
+
+/* Títulos */
+h2, h3 {
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    #changeBG {
+        padding: 6px 12px; /* Menor tamanho para telas menores */
+        font-size: 12px; /* Reduz o tamanho da fonte */
+        bottom: 20px; /* Ajusta a posição do botão no fundo */
+        right: 15px; /* Ajusta a posição do botão à direita */
+    }
+}
+
+/* Responsividade para telas muito pequenas (ex: smartphones verticais) */
+@media (max-width: 480px) {
+    #changeBG {
+        padding: 5px 10px; /* Tamanho ainda menor para telas muito pequenas */
+        font-size: 10px; /* Fonte menor para telas pequenas */
+        bottom: 10px; /* Ajusta ainda mais para o fundo */
+        right: 10px; /* Ajusta a distância à direita */
+    }
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+    background-color: #001f3f;
+    ;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #d0ebff;
+    cursor: pointer;
+}
+
+/* Estilo do título */
+h2 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+.calculo-visita {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Define um limite para telas maiores */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+}
+
+.calculo-visita h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+    text-align: center; /* Centraliza o título */
+}
+
+#calculo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#calculo-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#calculo-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Ajusta o botão para preencher a largura */
+}
+
+#calculo-form button:hover {
+    background-color: #0056b3;
+}
+
+#resultado-custo {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .calculo-visita {
+        padding: 15px;
+        max-width: 90%; /* Ocupa 90% da tela em dispositivos menores */
+    }
+
+    #calculo-form input {
+        padding: 10px;
+        font-size: 16px; /* Aumenta a legibilidade */
+    }
+
+    #calculo-form button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    #resultado-custo {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculo-visita {
+        padding: 10px;
+        max-width: 95%; /* Ocupa quase toda a tela */
+    }
+
+    #calculo-form input, 
+    #calculo-form button {
+        font-size: 14px; /* Ajusta para telas muito pequenas */
+    }
+
+    #resultado-custo {
+        font-size: 14px;
+    }
+}
